@@ -1,17 +1,18 @@
 package com.example;
 
+import com.example.Feline;
+import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionNegativeTest {
 
        @Mock
-    Feline feline;
+       Feline feline;
 
 
     @Test
