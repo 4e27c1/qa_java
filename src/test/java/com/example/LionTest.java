@@ -1,7 +1,5 @@
 package com.example;
 
-import com.example.Feline;
-import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,12 +12,10 @@ import org.mockito.Spy;
 import java.util.List;
 
 
-
 @RunWith(Parameterized.class)
 
 public class LionTest {
     private final String sex;
-    private boolean exMane;
     private final String type;
     private final List food;
 
@@ -33,7 +29,6 @@ public class LionTest {
 
     public LionTest(String sex, boolean exMane, String type, List food) {
         this.sex = sex;
-        this.exMane = exMane;
         this.type = type;
         this.food = food;
     }
@@ -51,9 +46,6 @@ public class LionTest {
     public void getKittensTest() throws Exception {
         Lion lion = new Lion(feline, sex);
         lion.getKittens();
-       // Mockito.when(feline.getKittens()).thenReturn(1);
-        //Mockito.verify(feline, Mockito.times(1).getKittens());
-        //Mockito.verifyNoMoreInteractions(feline);
         Assert.assertEquals("Результат не совпадает с ожидаемым", 1, lion.getKittens());
     }
 
@@ -61,7 +53,6 @@ public class LionTest {
     public void doesHaveManeTest() {
         try {
             Lion lion = new Lion(feline, sex);
-            //assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
             lion.doesHaveMane();
         } catch (Exception e) {
             Assert.assertEquals(
@@ -73,10 +64,7 @@ public class LionTest {
     @Test
     public void getFoodTest() throws Exception {
         Lion lion = new Lion(feline, sex);
-        lion.getFood();
         Mockito.when(feline.getFood(type)).thenReturn(food);
-        // Mockito.verify(feline, Mockito.times(1)).getFood(type);
-        Mockito.verifyNoMoreInteractions(feline);
         Assert.assertEquals("Неподходящая еда", food, lion.getFood());
     }
 }

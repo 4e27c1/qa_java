@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +11,6 @@ public class FelineTest {
     public void eatMeat() throws Exception {
         Feline testFeline = new Feline();
         List<String> responseGetFood = testFeline.eatMeat();
-        //System.out.println(responseGetFood);
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), responseGetFood);
     }
 
@@ -36,8 +34,6 @@ public class FelineTest {
         int rnd = 5;
         int expected = (int) (rnd* Math.random());
         int responseMoreKittens = testFeline.getKittens(expected);
-//        System.out.println(expected);
-//        System.out.println(responseMoreKittens);
         Assert.assertEquals(expected, responseMoreKittens);
 
     }

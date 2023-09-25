@@ -1,7 +1,5 @@
 package com.example;
 
-import com.example.Cat;
-import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +17,6 @@ public class CatTest {
     public void getSoundTest(){
         Cat testCat = new Cat(feline);
         String sound = testCat.getSound();
-        //System.out.println(sound);
         Assert.assertEquals("Мяу", sound);
     }
 
@@ -27,7 +24,6 @@ public class CatTest {
     public void getFoodTest() throws Exception {
         Cat testCat = new Cat(feline);
         List<String> responseGetFood = testCat.getFood();
-        //System.out.println(responseGetFood);
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), responseGetFood);
         Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
          }

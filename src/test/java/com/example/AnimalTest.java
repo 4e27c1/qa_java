@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.Animal;
 import org.junit.Assert;
 import org.junit.Test;
 
